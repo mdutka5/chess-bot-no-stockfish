@@ -126,6 +126,56 @@ body {
     height: 100%;
 }
 
+@media (max-width: 640px) {
+    body {
+        flex-direction: column;
+        height: 80vh;
+        padding: 10px;
+    }
+
+    #board {
+        width: min(100vw - 20px, 100vh - 20px);
+        height: min(100vw - 20px, 100vh - 20px);
+    }
+
+    .board-cell {
+        width: calc(min(100vw - 20px, 100vh - 20px) / 8);
+        height: calc(min(100vw - 20px, 100vh - 20px) / 8);
+    }
+
+    .board-cell.moveable::after {
+        width: 15px;
+        height: 15px;
+    }
+
+    .board-cell.capturable::after {
+        width: calc(min(100vw - 20px, 100vh - 20px) / 8 - 4px);
+        height: calc(min(100vw - 20px, 100vh - 20px) / 8 - 4px);
+    }
+
+    .killed {
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .killed .piece {
+        width: 30px;
+        height: 30px;
+    }
+
+    .game-over-pop-up {
+        width: 80vw;
+        height: auto;
+        padding: 20px;
+        transform: translate(-50%, -100%);
+    }
+
+    .game-over-pop-up p {
+        font-size: 32px;
+    }
+}
+
 /* Color 	Hex 	RGB
 	#660000 	(102,0,0)
 	#004474 	(0,68,116)
