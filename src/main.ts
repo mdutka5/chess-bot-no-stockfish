@@ -27,10 +27,11 @@ cells.forEach((cell) => {
             performMove(parseInt(selected?.dataset.index!), index);
             updateKilled();
 
-            const [botSrc, botDst] = bot.chooseAction();
-            performMove(botSrc, botDst);
-
-            updateKilled();
+            setTimeout(() => {
+                const [botSrc, botDst] = bot.chooseAction();
+                performMove(botSrc, botDst);
+                updateKilled();
+            }, 50);
         } else {
             handleSelect(parseInt(cell.dataset.index!));
         }
