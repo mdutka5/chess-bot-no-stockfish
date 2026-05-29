@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.killed {
+    height: 640px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.killed.black {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.killed.white {
+    justify-content: flex-start;
+    flex-wrap: wrap-reverse;
+}
+
+.killed .piece {
+    width: 60px;
+    height: 60px;
+}
+
+#board {
+    width: 640px;
+    height: 640px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    place-items: center;
+    gap: 0px;
+    border: 4px black solid;
+}
+
+.board-cell {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.board-cell.white {
+    background-color: #fbf5de;
+}
+
+.board-cell.black {
+    background-color: #004474;
+}
+
+.board-cell.active {
+    background-color: gray;
+}
+
+.board-cell.moveable::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board-cell.capturable::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid gray;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.board-cell.attacked::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.game-over-pop-up {
+    background-color: #f2ca5c;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid gray;
+    border-radius: 25px;
+}
+
+.game-over-pop-up p {
+    text-align: center;
+    font-size: 54px;
+}
+.piece {
+    width: 100%;
+    height: 100%;
+}
+
+/* Color 	Hex 	RGB
+	#660000 	(102,0,0)
+	#004474 	(0,68,116)
+	#f2ca5c 	(242,202,92)
+	#f8e7bb 	(248,231,187)
+	#fbf5de 	(251,245,222) */
