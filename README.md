@@ -91,7 +91,7 @@ src/
 ## Run Locally
 
 ```bash
-git clone https://github.com/yourusername/chess-bot-no-stockfish
+git clone https://github.com/mdutka5/chess-bot-no-stockfish
 cd chess-bot-no-stockfish
 npm install
 npm run dev
